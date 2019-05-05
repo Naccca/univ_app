@@ -1,5 +1,8 @@
 <header>
   <ul id="dropdown1" class="dropdown-content">
+    <% unless logged_in? %>
+      <li><%= link_to "Sign up", new_student_path %></li>
+    <% end %>
     <li><%= session_link %></li>
     <% if logged_in? %>
       <li><%= link_to "View profile", student_path(current_user) %></li>
